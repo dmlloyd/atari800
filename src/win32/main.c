@@ -1,5 +1,5 @@
 /* (C) 2000  Krzysztof Nikiel */
-/* $Id: main.c,v 1.3 2001/05/19 06:12:05 knik Exp $ */
+/* $Id: main.c,v 1.4 2001/08/27 04:48:28 knik Exp $ */
 #include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -30,7 +30,7 @@ void exit(int code)
   uninitinput();
   vloopexit |= 2;
   PostMessage(hWndMain, WM_CLOSE, 0, 0);
-  _endthread(code);
+  _endthread();
 }
 
 extern int atari_main(int argc, char **argv);
@@ -167,6 +167,9 @@ int PASCAL WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR
 
 /*
 $Log: main.c,v $
+Revision 1.4  2001/08/27 04:48:28  knik
+_sndthread() called without parameter
+
 Revision 1.3  2001/05/19 06:12:05  knik
 show window before display change
 

@@ -1,4 +1,4 @@
-/* $Id: monitor.c,v 1.12 2003/01/27 14:13:02 joy Exp $ */
+/* $Id: monitor.c,v 1.13 2003/02/10 10:00:59 joy Exp $ */
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -13,6 +13,7 @@
 #include "gtia.h"
 #include "pokey.h"
 #include "prompts.h"
+#include "rt-config.h"
 
 #ifdef PROFILE
 extern int instruction_count[256];
@@ -1427,6 +1428,9 @@ UWORD assembler(UWORD addr)
 
 /*
 $Log: monitor.c,v $
+Revision 1.13  2003/02/10 10:00:59  joy
+include added
+
 Revision 1.12  2003/01/27 14:13:02  joy
 Perry's cycle-exact ANTIC/GTIA emulation
 

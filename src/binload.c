@@ -1,4 +1,4 @@
-/* $Id: binload.c,v 1.2 2001/03/25 06:57:35 knik Exp $ */
+/* $Id: binload.c,v 1.3 2001/07/19 23:03:41 fox Exp $ */
 #include <stdio.h>
 
 #include "atari.h"
@@ -92,6 +92,8 @@ void BIN_loader_cont(void)
 	regS--;
 	regPC = dGetByte(0x2e2) | (dGetByte(0x2e3) << 8);
 	SetC;
+
+	dPutByte(0x0300, 0x31);	/* for "Studio Dream" */
 }
 
 /* Fake boot sector to call BIN_loader_cont at boot time */

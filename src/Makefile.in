@@ -1,4 +1,4 @@
-# $Id: Makefile.in,v 1.16 2002/07/09 10:32:33 joy Exp $
+# $Id: Makefile.in,v 1.17 2002/12/08 20:28:31 knik Exp $
 
 CC = @CC@
 RC = windres
@@ -43,6 +43,7 @@ OBJ = \
 	diskled.o \
 	colours.o \
 	pokeysnd.o \
+	mzpokeysnd.o \
 	sndsave.o \
 	cassette.o \
 	input.o

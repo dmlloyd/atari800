@@ -1,4 +1,4 @@
-/* $Id: atari_svgalib.c,v 1.7 2001/10/03 16:15:58 knik Exp $ */
+/* $Id: atari_svgalib.c,v 1.8 2002/08/07 06:16:50 joy Exp $ */
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -446,7 +446,7 @@ void Atari_Initialise(int *argc, char *argv[])
 		}
 		else {
 			if (strcmp(argv[i], "-help") == 0) {
-				printf("\t-interlace    Generate screen with interlace\n");
+				Aprint("\t-interlace    Generate screen with interlace\n");
 			}
 			argv[j++] = argv[i];
 		}
@@ -587,9 +587,7 @@ int Atari_Exit(int run_monitor)
 		Sound_Exit();
 #endif
 
-#ifdef BUFFERED_LOG
-        	Aflushlog();
-#endif
+      	Aflushlog();
 	}
 
 	return restart;
@@ -815,6 +813,9 @@ int main(int argc, char **argv)
 
 /*
 $Log: atari_svgalib.c,v $
+Revision 1.8  2002/08/07 06:16:50  joy
+printf->Aprint
+
 Revision 1.7  2001/10/03 16:15:58  knik
 keyboard update
 

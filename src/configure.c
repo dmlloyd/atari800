@@ -1,4 +1,4 @@
-/* $Id: configure.c,v 1.2 2001/03/18 07:56:48 knik Exp $ */
+/* $Id: configure.c,v 1.3 2001/03/25 07:05:55 knik Exp $ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -122,13 +122,8 @@ int main(void)
 	if (!home)
 		home = ".";
 
-#ifndef DJGPP
 	/* sprintf(config_filename, "%s/.atari800", home); */
 	strcpy(config_filename, ".atari800");
-#else
-	/* sprintf(config_filename, "%s/atari800.djgpp", home); */
-	strcpy(config_filename, "atari800.djgpp");
-#endif
 
 	fp = fopen(config_filename, "rt");
 	if (fp) {
@@ -312,6 +307,9 @@ int main(void)
 
 /*
 $Log: configure.c,v $
+Revision 1.3  2001/03/25 07:05:55  knik
+use common name .atari800 in dos
+
 Revision 1.2  2001/03/18 07:56:48  knik
 win32 port
 

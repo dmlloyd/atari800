@@ -1,5 +1,5 @@
 /* (C) 2000  Krzysztof Nikiel */
-/* $Id: screen.c,v 1.1 2001/03/18 07:56:48 knik Exp $ */
+/* $Id: screen.c,v 1.2 2001/07/22 06:47:20 knik Exp $ */
 #define DIRECTDRAW_VERSION 0x0500
 
 #include <windows.h>
@@ -180,7 +180,7 @@ void refreshv(UBYTE * scr_ptr)
                                       | DDLOCK_WAIT
                                       ,NULL)) == DD_OK)
     {
-      linesize = desc0.u1.lPitch;
+      linesize = desc0.lPitch;
       scrwidth = desc0.dwWidth;
       scrheight = desc0.dwHeight;
       scraddr = desc0.lpSurface;
@@ -238,6 +238,9 @@ void refreshv(UBYTE * scr_ptr)
 
 /*
 $Log: screen.c,v $
+Revision 1.2  2001/07/22 06:47:20  knik
+DDSURFACEDESC u1 name removed
+
 Revision 1.1  2001/03/18 07:56:48  knik
 win32 port
 

@@ -1,4 +1,4 @@
-dnl $Id: configure.in,v 1.25 2003/02/10 13:30:17 joy Exp $
+dnl $Id: configure.in,v 1.26 2003/02/11 07:34:15 joy Exp $
 dnl
 dnl Copyright (C) 2001 Krzysztof Nikiel
 dnl
@@ -62,6 +62,7 @@ echo "$a800_host environment found"
 
 case "$a800_host" in
   dos)	AC_DEFINE(DOS_DRIVES,, [define to enable dos style drives support])
+	AC_DEFINE(BACK_SLASH,, [define to use back slash])
 	AC_DEFINE(DEFAULT_CFG_NAME, "atari800.cfg", [alternate config filename due to 8+3 fs limit])
 	AC_DEFINE(SYSTEM_WIDE_CFG_FILE, "c:\\atari800.cfg", [alternate system-wide config file for non-Unix OS])
 ;;  

@@ -1,4 +1,4 @@
-/* $Id: sound.c,v 1.8 2002/08/07 08:43:58 joy Exp $ */
+/* $Id: sound.c,v 1.9 2002/12/08 20:33:27 knik Exp $ */
 #include <stdio.h>
 #include <unistd.h>
 
@@ -112,9 +112,9 @@ void Sound_Initialise(int *argc, char *argv[])
 		}
 
 #ifdef STEREO
-		Pokey_sound_init(FREQ_17_EXACT, dsprate, 2);
+		Pokey_sound_init(FREQ_17_EXACT, dsprate, 2, 0, 0);
 #else
-		Pokey_sound_init(FREQ_17_EXACT, dsprate, 1);
+		Pokey_sound_init(FREQ_17_EXACT, dsprate, 1, 0, 0);
 #endif
 	}
 }
@@ -167,6 +167,9 @@ void Sound_Update(void)
 
 /*
  $Log: sound.c,v $
+ Revision 1.9  2002/12/08 20:33:27  knik
+ new arguments in Pokey_sound_init call
+
  Revision 1.8  2002/08/07 08:43:58  joy
  ALL printf->Aprint, in help_only doesn't initialize the sound
 

@@ -1,4 +1,4 @@
-/* $Id: atari.h,v 1.5 2001/03/18 06:34:58 knik Exp $ */
+/* $Id: atari.h,v 1.6 2001/03/25 07:00:05 knik Exp $ */
 #ifndef __ATARI__
 #define	__ATARI__
 
@@ -30,10 +30,6 @@
 #define	ULONG unsigned long int
 #else
 #define	ULONG unsigned int
-#endif
-
-#ifndef O_BINARY				/* flag for binary files on MS-DOS */
-#define O_BINARY	0			/* this won't cause any trouble */
 #endif
 
 #ifdef SHM
@@ -447,6 +443,9 @@ void atari_sync(void);
 
 /*
 $Log: atari.h,v $
+Revision 1.6  2001/03/25 07:00:05  knik
+removed o_binary define
+
 Revision 1.5  2001/03/18 06:34:58  knik
 WIN32 conditionals removed
 

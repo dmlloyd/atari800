@@ -1,4 +1,4 @@
-/* $Id: atari_x11.c,v 1.6 2001/11/11 15:39:09 joy Exp $ */
+/* $Id: atari_x11.c,v 1.7 2002/01/04 08:25:58 joy Exp $ */
 #include <stdio.h>
 #include <stdlib.h>
 #ifdef VMS
@@ -2605,7 +2605,7 @@ void Atari_DisplayScreen(UBYTE * screen)
 	first_y = ATARI_HEIGHT;
 	last_y = -1000;
 
-	if( invisible || !draw_display )   goto after_screen_update;  /* mmm */
+	if( invisible )   goto after_screen_update;  /* mmm */
         if(image->bits_per_pixel == 32)
         {
                 ULONG *ptr = (ULONG *) image->data;

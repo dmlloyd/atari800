@@ -1,4 +1,4 @@
-/* $Id: atari.h,v 1.28 2002/07/08 20:27:14 joy Exp $ */
+/* $Id: atari.h,v 1.29 2002/08/07 07:48:08 joy Exp $ */
 #ifndef __ATARI__
 #define	__ATARI__
 
@@ -59,7 +59,7 @@ extern int verbose;
 #define ATARI_WIDTH  384
 #define ATARI_HEIGHT 240
 
-#define ATARI_TITLE  "Atari 800 Emulator, Version 1.2.3"
+#define ATARI_TITLE  "Atari 800 Emulator, Version 1.2.4"
 
 extern int xpos;
 extern int xpos_limit;
@@ -229,6 +229,9 @@ void atari_sync(void);
 
 /*
 $Log: atari.h,v $
+Revision 1.29  2002/08/07 07:48:08  joy
+ver++
+
 Revision 1.28  2002/07/08 20:27:14  joy
 ver++
 

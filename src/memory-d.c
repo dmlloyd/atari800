@@ -1,4 +1,4 @@
-/* $Id: memory-d.c,v 1.11 2001/09/17 18:19:50 fox Exp $ */
+/* $Id: memory-d.c,v 1.12 2001/10/01 17:13:26 fox Exp $ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -289,7 +289,7 @@ void CopyToMem(UBYTE * from, ATPtr to, int size)
 
 	for (i = 0; i < size; i++) {
 		if (!attrib[to])
-			Poke(to, *from);
+			dPutByte(to, *from);
 		from++, to++;
 	}
 }
@@ -480,6 +480,9 @@ void get_charset(char * cs)
 
 /*
 $Log: memory-d.c,v $
+Revision 1.12  2001/10/01 17:13:26  fox
+Poke -> dPutByte
+
 Revision 1.11  2001/09/17 18:19:50  fox
 malloc/free atarixe_memory, enable_c000_ram -> ram_size = 52
 

@@ -1,10 +1,11 @@
 /* (C) 2000  Krzysztof Nikiel */
-/* $Id: main.c,v 1.1 2001/03/18 07:56:48 knik Exp $ */
+/* $Id: main.c,v 1.2 2001/04/08 05:51:44 knik Exp $ */
 #include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <process.h>
+#include "config.h"
 #include "main.h"
 #include "screen.h"
 #include "keyboard.h"
@@ -23,7 +24,9 @@ static int gargc = 0;
 void exit(int code)
 {
   groff();
-  uninitsound();
+#ifdef SOUND
+  Sound_Exit();
+#endif
   uninitinput();
   vloopexit |= 2;
   PostMessage(hWndMain, WM_CLOSE, 0, 0);
@@ -47,7 +50,9 @@ static long FAR PASCAL WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM
       if (bActive)
 	{
 	  kbreacquire();
-	  sndrestore();
+#ifdef SOUND
+	  Sound_Continue();
+#endif
 	}
       break;
     case WM_SETCURSOR:
@@ -159,6 +164,9 @@ int PASCAL WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR
 
 /*
 $Log: main.c,v $
+Revision 1.2  2001/04/08 05:51:44  knik
+sound calls update
+
 Revision 1.1  2001/03/18 07:56:48  knik
 win32 port
 

@@ -1,4 +1,4 @@
-# $Id: common.mak,v 1.1 2001/03/25 07:03:46 knik Exp $
+# $Id: common.mak,v 1.2 2001/04/04 05:35:36 knik Exp $
 
 TARGET = atari800$(EXE)
 
@@ -52,7 +52,7 @@ config config.h .atari800: config.in
 configure$(EXE): configure.o prompts.o
 	$(CC) -o $@ $(LDFLAGS) configure.o prompts.o
 
-$(TARGET): $(OBJ)
+$(TARGET): $(OBJ) $(CONFDEPS)
 	$(CC) -o $@ $(LDFLAGS) $(OBJ) $(LIBS)
 
 distclean: clean

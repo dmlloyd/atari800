@@ -1,4 +1,4 @@
-# $Id: Makefile.in,v 1.15 2001/12/31 08:43:33 joy Exp $
+# $Id: Makefile.in,v 1.16 2002/07/09 10:32:33 joy Exp $
 
 CC = @CC@
 RC = windres
@@ -10,7 +10,7 @@ DEFS=@DEFS@
 PREFIX		= @prefix@
 BIN_PATH	= ${PREFIX}/bin
 LIB_PATH	= ${PREFIX}/lib
-MAN_PATH	= ${PREFIX}/man
+MAN_PATH	= ${PREFIX}/share/man
 
 INCLUDE=-I.
 

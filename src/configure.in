@@ -1,4 +1,4 @@
-dnl $Id: configure.in,v 1.21 2003/02/08 20:07:03 joy Exp $
+dnl $Id: configure.in,v 1.22 2003/02/08 23:52:17 joy Exp $
 dnl
 dnl Copyright (C) 2001 Krzysztof Nikiel
 dnl
@@ -119,14 +119,14 @@ OBJ="atari_svgalib.o"
 curses)
 dnl Replace `main' with a function in -lcurses:
 NEED_LIB(curses, main)
-AC_DEFINE(CURSES,, [ ])
+AC_DEFINE(USE_CURSES,, [ ])
 OBJ=atari_curses.o
 ;;
 ncurses)
 dnl Replace `main' with a function in -lncurses:
 NEED_LIB(ncurses, main)
 AC_DEFINE(NCURSES,, [ ])
-AC_DEFINE(CURSES,, [ ])
+AC_DEFINE(USE_CURSES,, [ ])
 OBJ=atari_curses.o
 ;;
 dx)

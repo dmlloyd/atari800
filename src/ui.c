@@ -1,4 +1,4 @@
-/* $Id: ui.c,v 1.19 2001/10/08 21:03:10 fox Exp $ */
+/* $Id: ui.c,v 1.20 2001/10/09 00:43:31 fox Exp $ */
 #include <stdio.h>
 #include <fcntl.h>
 #include <string.h>
@@ -901,7 +901,7 @@ int SelectCartType(UBYTE * screen, int k)
 		"XEGS 32 KB cartridge",
 		"XEGS 64 KB cartridge",
 		"XEGS 128 KB cartridge",
-		"OSS 'M019' 16 KB cartridge",
+		"OSS 'M091' 16 KB cartridge",
 		"One chip 16 KB 5200 cartridge",
 		"Atrax 128 KB cartridge",
 		"Bounty Bob 40 KB cartridge"
@@ -1518,6 +1518,9 @@ void ReadCharacterSet( void )
 
 /*
 $Log: ui.c,v $
+Revision 1.20  2001/10/09 00:43:31  fox
+OSS 'M019' -> 'M091'
+
 Revision 1.19  2001/10/08 21:03:10  fox
 corrected stack bug (thanks Vasyl) and renamed some cartridge types
 

@@ -1,4 +1,4 @@
-/* $Id: atari.h,v 1.21 2001/10/03 16:49:04 fox Exp $ */
+/* $Id: atari.h,v 1.22 2001/10/10 06:58:31 joy Exp $ */
 #ifndef __ATARI__
 #define	__ATARI__
 
@@ -59,7 +59,7 @@ extern int verbose;
 #define ATARI_WIDTH  384
 #define ATARI_HEIGHT 240
 
-#define ATARI_TITLE  "Atari 800 Emulator, Version 1.0.7"
+#define ATARI_TITLE  "Atari 800 Emulator, Version 1.2.0"
 
 extern int xpos;
 extern int xpos_limit;
@@ -221,6 +221,9 @@ void atari_sync(void);
 
 /*
 $Log: atari.h,v $
+Revision 1.22  2001/10/10 06:58:31  joy
+version++
+
 Revision 1.21  2001/10/03 16:49:04  fox
 added screen_visible_* variables
 

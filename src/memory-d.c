@@ -1,10 +1,11 @@
-/* $Id: memory-d.c,v 1.13 2001/10/03 16:42:50 fox Exp $ */
+/* $Id: memory-d.c,v 1.14 2001/10/08 11:40:48 joy Exp $ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 #include "atari.h"
 #include "antic.h"
+#include	"cpu.h"
 #include "cartridge.h"
 #include "gtia.h"
 #include "log.h"
@@ -351,6 +352,9 @@ void get_charset(char * cs)
 
 /*
 $Log: memory-d.c,v $
+Revision 1.14  2001/10/08 11:40:48  joy
+neccessary include for compiling with DEBUG defined (see line 200)
+
 Revision 1.13  2001/10/03 16:42:50  fox
 rewritten escape codes handling
 

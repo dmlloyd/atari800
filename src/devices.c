@@ -1,4 +1,4 @@
-/* $Id: devices.c,v 1.9 2001/07/20 00:30:08 fox Exp $ */
+/* $Id: devices.c,v 1.10 2001/09/21 16:54:11 fox Exp $ */
 #include	<stdio.h>
 #include	<stdlib.h>
 #include	<string.h>
@@ -592,8 +592,6 @@ void Device_KHREAD(void)
 
 void Device_EHOPEN(void)
 {
-	UBYTE ch;
-
 	Aprint( "Editor device open" );
 	regY = 1;
 	ClrN;
@@ -746,6 +744,9 @@ void AtariEscape(UBYTE esc_code)
 
 /*
 $Log: devices.c,v $
+Revision 1.10  2001/09/21 16:54:11  fox
+removed unused variable
+
 Revision 1.9  2001/07/20 00:30:08  fox
 replaced K_Device with Device_KHREAD,
 replaced E_Device with Device_EHOPEN, Device_EHREAD and Device_EHWRITE,

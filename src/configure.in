@@ -1,4 +1,4 @@
-dnl $Id: configure.in,v 1.5 2001/10/24 11:44:37 joy Exp $
+dnl $Id: configure.in,v 1.6 2001/10/26 05:40:20 fox Exp $
 dnl
 dnl Copyright (C) 2001 Krzysztof Nikiel
 dnl
@@ -115,7 +115,7 @@ vga)
 		exit 1
 	fi
 	AC_DEFINE(VGA)
-	OBJ="atari_vga.o dos/vga_gfx.o dos/vga_asm.o"
+	OBJ="dos/atari_vga.o dos/vga_gfx.o dos/vga_asm.o"
 ;;
 svgalib)
 dnl Replace `main' with a function in -lvga:

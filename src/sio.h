@@ -1,4 +1,4 @@
-/* $Id: sio.h,v 1.7 2001/09/08 07:54:48 knik Exp $ */
+/* $Id: sio.h,v 1.8 2003/09/23 15:39:07 pfusik Exp $ */
 #ifndef __SIO__
 #define __SIO__
 
@@ -24,6 +24,7 @@ extern char sio_filename[MAX_DRIVES][FILENAME_MAX];
 int SIO_Mount(int diskno, const char *filename, int b_open_readonly);
 void SIO_Dismount(int diskno);
 void SIO_DisableDrive(int diskno);
+int Rotate_Disks(void);
 void SIO(void);
 
 #define SIO_NoFrame         (0x00)

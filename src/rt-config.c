@@ -1,4 +1,4 @@
-/* $Id: rt-config.c,v 1.10 2001/09/17 18:16:03 fox Exp $ */
+/* $Id: rt-config.c,v 1.11 2001/10/03 16:32:07 fox Exp $ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -434,7 +434,7 @@ void RtConfigUpdate(void)
 	}
 
 	{
-		int default_tv_mode;
+		int default_tv_mode = tv_mode == TV_NTSC ? 2 : 1;
 		do {
 			GetNumber("Default TV mode 1=PAL 2=NTSC [%d] ",
 					  &default_tv_mode);
@@ -474,6 +474,9 @@ void RtConfigUpdate(void)
 
 /*
 $Log: rt-config.c,v $
+Revision 1.11  2001/10/03 16:32:07  fox
+fixed default TV mode in RtConfigUpdate
+
 Revision 1.10  2001/09/17 18:16:03  fox
 enable_c000_ram -> ram_size = 52
 

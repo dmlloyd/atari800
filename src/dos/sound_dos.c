@@ -1,4 +1,4 @@
-/* $Id: sound_dos.c,v 1.2 2001/04/08 06:01:02 knik Exp $ */
+/* $Id: sound_dos.c,v 1.3 2002/08/07 10:21:30 joy Exp $ */
 
 #include <stdio.h>		/* for sscanf */
 #include "config.h"
@@ -44,7 +44,7 @@ void Sound_Initialise(int *argc, char *argv[])
 
 	if (sound_enabled) {
 		if (sb_init(&playback_freq, &bps, &buffersize, &stereo) < 0) {
-			Aprint("Cannot init sound card\n");
+			Aprint("Cannot init sound card");
 			sound_enabled = FALSE;
 		}
 		else {

@@ -1,4 +1,4 @@
-# $Id: Makefile.win32,v 1.4 2001/04/08 05:58:16 knik Exp $
+# $Id: Makefile.win32,v 1.5 2001/04/15 09:09:51 knik Exp $
 
 CC = gcc $(CYGOPT)
 EXE=.exe
@@ -41,10 +41,10 @@ include common.mak
 
 dx:
 	$(MAKE) $(CONFDEPS) DEFS="$(DEFS)"
-	$(MAKE) $(TARGET) DEFS="$(DEFS) -Dmain=atari_main -DDIRECTX" \        
+	$(MAKE) $(TARGET) DEFS="$(DEFS) -Dmain=atari_main -DDIRECTX" \
 		OBJ="$(OBJ) $(DXOBJ)" \
 		LIBS="$(LIBS) -lgdi32 -lddraw -ldinput -ldsound -ldxguid"
-        
+
 basic:
 	$(MAKE) $(TARGET) DEFS="$(DEFS) -DBASIC" OBJ="$(OBJ) $(BASICOBJ)"
 

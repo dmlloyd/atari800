@@ -1,4 +1,4 @@
-/* $Id: atari_x11.c,v 1.7 2002/01/04 08:25:58 joy Exp $ */
+/* $Id: atari_x11.c,v 1.8 2002/06/23 21:40:23 joy Exp $ */
 #include <stdio.h>
 #include <stdlib.h>
 #ifdef VMS
@@ -343,7 +343,7 @@ int GetKeyCode(XEvent * event)
 			break;
 		case XK_F8:
 			if(CONTROL) {
-				SoundRecording(NULL);
+				SoundRecording();
 			}
 			else
 				screen_dump = 2;
@@ -737,7 +737,9 @@ int GetKeyCode(XEvent * event)
 	return keycode;
 }
 
+#if defined(XVIEW) || defined(MOTIF)
 static int xview_keycode = AKEY_NONE;
+#endif
 
 #ifdef XVIEW
 
@@ -1583,7 +1585,6 @@ void Atari_Initialise(int *argc, char *argv[])
 #ifdef SOUND
 	Sound_Initialise(argc, argv);
 #endif
-
 
 	if ((clipping_x < 0) || (clipping_x >= ATARI_WIDTH))
 	{
@@ -3222,7 +3223,7 @@ void experimental_mouse_joystick(int mode)	/* Don't use ;-) */
 
 	if (mode < 5) {
 		int dx,dy;
-		int dist,course,rc;
+		int course,rc;
 		
 		if( prev_x<0 )	prev_x=root_x_return;
 		if( prev_y<0 )	prev_y=root_y_return;
@@ -3495,8 +3496,10 @@ int Atari_TRIG(int num)
 		else
 			trig = 1;
 
+#if defined(XVIEW) || defined(MOTIF)
 		if (js_data.buttons & 0x02)
 			xview_keycode = AKEY_SPACE;
+#endif
 	}
 	if (num == js1_mode) {
 		int status;

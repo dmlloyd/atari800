@@ -1,4 +1,4 @@
-/* $Id: monitor.c,v 1.7 2001/07/20 19:57:07 fox Exp $ */
+/* $Id: monitor.c,v 1.8 2001/10/29 17:56:05 fox Exp $ */
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -614,7 +614,7 @@ static char old_s[sizeof(s)]=""; /*GOLDA CHANGED*/
 				printf("\n");
 				nlines++;
 
-				if (nlines == 15) {
+				if (!done && nlines == 15) {
 					char buf[100];
 					printf("Press return to continue: ");
 					fgets(buf, sizeof(buf), stdin);
@@ -1389,6 +1389,9 @@ UWORD assembler(UWORD addr)
 
 /*
 $Log: monitor.c,v $
+Revision 1.8  2001/10/29 17:56:05  fox
+"DLIST" didn't stopped on JVB if Display List had multiple of 15 instructions
+
 Revision 1.7  2001/07/20 19:57:07  fox
 not displaying rom_inserted in "PIA" command
 

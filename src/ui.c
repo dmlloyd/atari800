@@ -1,4 +1,4 @@
-/* $Id: ui.c,v 1.25 2001/10/26 05:43:17 fox Exp $ */
+/* $Id: ui.c,v 1.26 2001/11/04 23:31:39 fox Exp $ */
 #include <stdio.h>
 #include <fcntl.h>
 #include <string.h>
@@ -222,6 +222,7 @@ int SelectCartType(UBYTE* screen, int k)
 		{ "CRTI", ITEM_ACTION, NULL, "Bounty Bob 40 KB cartridge",      NULL, 18 },
 		{ "CRTJ", ITEM_ACTION, NULL, "Standard 8 KB 5200 cartridge",    NULL, 19 },
 		{ "CRTK", ITEM_ACTION, NULL, "Standard 4 KB 5200 cartridge",    NULL, 20 },
+		{ "CRTL", ITEM_ACTION, NULL, "Right slot 8 KB cartridge",       NULL, 21 },
 		MENU_END
 	};
 
@@ -768,6 +769,9 @@ int CrashMenu()
 
 /*
 $Log: ui.c,v $
+Revision 1.26  2001/11/04 23:31:39  fox
+right slot cartridge
+
 Revision 1.25  2001/10/26 05:43:17  fox
 current system is selected by default in SelectSystem()
 

@@ -1,5 +1,5 @@
 /* (C) 2000  Krzysztof Nikiel */
-/* $Id: sound.c,v 1.1 2001/03/18 07:56:48 knik Exp $ */
+/* $Id: sound.c,v 1.2 2001/03/24 10:13:43 knik Exp $ */
 #define DIRECTSOUND_VERSION 0x0500
 
 #include <windows.h>
@@ -63,6 +63,9 @@ int initsound(int *argc, char *argv[])
       }
     }
   *argc = j;
+
+  if (!usesound)
+    return 1;
 
   if ((err = DirectSoundCreate(NULL, &lpDS, NULL)) < 0)
     return err;
@@ -244,6 +247,9 @@ void Sound_Continue(void)
 
 /*
 $Log: sound.c,v $
+Revision 1.2  2001/03/24 10:13:43  knik
+-nosound option fixed
+
 Revision 1.1  2001/03/18 07:56:48  knik
 win32 port
 

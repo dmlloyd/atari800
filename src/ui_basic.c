@@ -1,4 +1,4 @@
-/* $Id: ui_basic.c,v 1.7 2002/06/12 06:40:41 vasyl Exp $ */
+/* $Id: ui_basic.c,v 1.8 2003/01/27 13:14:51 joy Exp $ */
 
 #include <stdio.h>
 #include <fcntl.h>
@@ -9,6 +9,7 @@
 #include <sys/stat.h>
 #include "rt-config.h"
 #include "atari.h"
+#include "antic.h"
 #include "list.h"
 #include "ui.h"
 #include "log.h"
@@ -994,6 +995,9 @@ void BasicUIInit()
 
 /*
 $Log: ui_basic.c,v $
+Revision 1.8  2003/01/27 13:14:51  joy
+Jason's changes: either PAGED_ATTRIB support (mostly), or just clean up.
+
 Revision 1.7  2002/06/12 06:40:41  vasyl
 Fixed odd behavior of Up button on the first item in file selector
 

@@ -1,6 +1,7 @@
-/* $Id: atari_x11.c,v 1.9 2002/08/07 08:42:51 joy Exp $ */
+/* $Id: atari_x11.c,v 1.10 2003/01/27 13:14:52 joy Exp $ */
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #ifdef VMS
 #include <stat.h>
 #else

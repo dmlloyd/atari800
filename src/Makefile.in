@@ -1,4 +1,4 @@
-# $Id: Makefile.in,v 1.20 2003/01/06 17:10:39 knik Exp $
+# $Id: Makefile.in,v 1.21 2003/01/27 13:14:53 joy Exp $
 
 CC = @CC@
 RC = windres
@@ -27,6 +27,7 @@ OBJ = \
 	gtia.o \
 	pokey.o \
 	pia.o \
+	pbi.o \
 	cartridge.o \
 	rtime.o \
 	prompts.o \
@@ -75,6 +76,10 @@ dep:
 
 clean:
 	rm -f $(OBJ) $(TARGET)
+
+distclean: clean
+	-rm -f Makefile configure config.log config.status config.h
+	-rm -rf autom4te.cache
 
 install-svgalib : install
 	chown root.root ${BIN_PATH}/$(TARGET)

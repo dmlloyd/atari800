@@ -1,4 +1,4 @@
-/* $Id: devices.c,v 1.15 2003/01/27 12:55:23 joy Exp $ */
+/* $Id: devices.c,v 1.16 2003/01/27 13:14:54 joy Exp $ */
 #include    <stdio.h>
 #include    <stdlib.h>
 #include    <string.h>
@@ -2058,7 +2058,11 @@ void Device_UpdatePatches(void)
 	if (enable_h_patch) {		/* enable H: device */
 		/* change memory attributex for the area, where we put
 		   H: handler table and patches */
+#ifndef PAGED_ATTRIB
 		SetROM(H_DEVICE_BEGIN, H_DEVICE_END);
+#else
+#warning H: device not working yet
+#endif
 		/* set handler table */
 		dPutWord(H_TABLE_ADDRESS + DEVICE_TABLE_OPEN, H_PATCH_OPEN - 1);
 		dPutWord(H_TABLE_ADDRESS + DEVICE_TABLE_CLOS, H_PATCH_CLOS - 1);
@@ -2092,6 +2096,9 @@ void Device_UpdatePatches(void)
 
 /*
 $Log: devices.c,v $
+Revision 1.16  2003/01/27 13:14:54  joy
+Jason's changes: either PAGED_ATTRIB support (mostly), or just clean up.
+
 Revision 1.15  2003/01/27 12:55:23  joy
 harddisk emulation now fully supports subdirectories.
 

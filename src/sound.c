@@ -1,4 +1,4 @@
-/* $Id: sound.c,v 1.10 2003/01/27 13:14:53 joy Exp $ */
+/* $Id: sound.c,v 1.11 2003/02/09 21:24:12 joy Exp $ */
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
@@ -113,9 +113,9 @@ void Sound_Initialise(int *argc, char *argv[])
 		}
 
 #ifdef STEREO
-		Pokey_sound_init(FREQ_17_EXACT, dsprate, 2, 0, 0);
+		Pokey_sound_init(FREQ_17_EXACT, dsprate, 2, 0);
 #else
-		Pokey_sound_init(FREQ_17_EXACT, dsprate, 1, 0, 0);
+		Pokey_sound_init(FREQ_17_EXACT, dsprate, 1, 0);
 #endif
 	}
 }
@@ -168,6 +168,9 @@ void Sound_Update(void)
 
 /*
  $Log: sound.c,v $
+ Revision 1.11  2003/02/09 21:24:12  joy
+ updated for different number of Pokey_sound_init parameters
+
  Revision 1.10  2003/01/27 13:14:53  joy
  Jason's changes: either PAGED_ATTRIB support (mostly), or just clean up.
 

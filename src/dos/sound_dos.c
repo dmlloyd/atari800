@@ -1,4 +1,4 @@
-/* $Id: sound_dos.c,v 1.3 2002/08/07 10:21:30 joy Exp $ */
+/* $Id: sound_dos.c,v 1.4 2003/02/09 21:24:13 joy Exp $ */
 
 #include <stdio.h>		/* for sscanf */
 #include "config.h"
@@ -50,9 +50,9 @@ void Sound_Initialise(int *argc, char *argv[])
 		else {
 
 #ifdef STEREO
-			Pokey_sound_init(FREQ_17_APPROX, playback_freq, 2);
+			Pokey_sound_init(FREQ_17_APPROX, playback_freq, 2, 0);
 #else
-			Pokey_sound_init(FREQ_17_APPROX, playback_freq, 1);
+			Pokey_sound_init(FREQ_17_APPROX, playback_freq, 1, 0);
 #endif
 			sb_startoutput((sbmix_t) Pokey_process);
 		}

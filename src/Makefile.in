@@ -1,4 +1,4 @@
-# $Id: Makefile.in,v 1.5 2001/09/21 17:01:28 fox Exp $
+# $Id: Makefile.in,v 1.6 2001/09/25 17:40:57 knik Exp $
 
 CC = @CC@
 RC = windres
@@ -6,8 +6,6 @@ EXE=@EXE@
 TARGET=atari800$(EXE)
 CFLAGS=@CPPFLAGS@ @CFLAGS@
 DEFS=@DEFS@
-# win32 hack
-A800_MAIN=@A800_MAIN@
 
 PREFIX		= @prefix@
 BIN_PATH	= ${PREFIX}/bin
@@ -52,9 +50,6 @@ OBJ = \
 OBJ += @OBJ@
 
 all: $(TARGET)
-
-atari.o: atari.c
-	$(CC) -c -o $@ $(DEFS) $(A800_MAIN) $(INCLUDE) $(CFLAGS) $<
 
 %.o: %.c
 	$(CC) -c -o $@ $(DEFS) $(INCLUDE) $(CFLAGS) $<

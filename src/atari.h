@@ -1,4 +1,4 @@
-/* $Id: atari.h,v 1.18 2001/09/21 17:08:41 fox Exp $ */
+/* $Id: atari.h,v 1.19 2001/09/22 09:21:33 fox Exp $ */
 #ifndef __ATARI__
 #define	__ATARI__
 
@@ -43,6 +43,9 @@ extern int ram_size;
 #define TV_PAL 312
 #define TV_NTSC 262
 extern int tv_mode;				/* now it is simply number of scanlines */
+
+extern int nframes;
+extern double deltatime;
 
 extern int verbose;
 
@@ -156,10 +159,6 @@ struct ATR_Header {
 #define AKEY_SCREENSHOT -8
 #define AKEY_SCREENSHOT_INTERLACE -9
 
-#define AKEY_SHFT 0x40
-#define AKEY_CTRL 0x80
-#define AKEY_SHFTCTRL 0xc0
-
 /*
    ==============
    menu functions
@@ -207,6 +206,9 @@ void atari_sync(void);
 
 /*
 $Log: atari.h,v $
+Revision 1.19  2001/09/22 09:21:33  fox
+declared nframes and deltatime, AKEY_SHFT etc. moved to input.h
+
 Revision 1.18  2001/09/21 17:08:41  fox
 removed draw_display, added Atari800_Initialise
 

@@ -1,4 +1,4 @@
-/* $Id: compfile.c,v 1.7 2001/09/08 07:49:33 knik Exp $ */
+/* $Id: compfile.c,v 1.8 2001/12/04 13:05:16 joy Exp $ */
 /* dcmtoatr based on code written by Chad Wagner (cmwagner@gate.net),
    version 1.4 (also by Preston Crow) */
 
@@ -17,7 +17,7 @@
 #include "config.h"
 #include "log.h"
 #ifdef HAVE_LIBZ
-#include "zlib.h"
+#include <zlib.h>
 #endif
 
 /* Size of memory buffer ZLIB should use when decompressing files */
@@ -643,6 +643,9 @@ static long soffset()
 
 /*
 $Log: compfile.c,v $
+Revision 1.8  2001/12/04 13:05:16  joy
+include zlib.h from the system include path and not from local directory (suggested by Nathan)
+
 Revision 1.7  2001/09/08 07:49:33  knik
 unused definitions and inclusions removed
 

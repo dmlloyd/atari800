@@ -1,6 +1,5 @@
-/* $Id: platform.h,v 1.5 2001/10/03 16:52:38 fox Exp $ */
-#ifndef __PLATFORM__
-#define __PLATFORM__
+#ifndef _PLATFORM_H_
+#define _PLATFORM_H_
 
 #include "atari.h"
 
@@ -16,10 +15,13 @@ void Atari_DisplayScreen (UBYTE *screen);
 int Atari_PORT(int num);
 int Atari_TRIG(int num);
 
-#endif
+#endif /* _PLATFORM_H_ */
 
 /*
 $Log: platform.h,v $
+Revision 1.6  2003/02/24 09:33:07  joy
+header cleanup
+
 Revision 1.5  2001/10/03 16:52:38  fox
 removed Atari_POT and Atari_Set_LED
 

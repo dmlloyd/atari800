@@ -1,7 +1,5 @@
-/* (C) 2000  Krzysztof Nikiel */
-/* $Id: keyboard.h,v 1.1 2001/03/18 07:56:48 knik Exp $ */
-#ifndef A800_KEYBOARD_H
-#define A800_KEYBOARD_H
+#ifndef _KEYBOARD_H_
+#define _KEYBOARD_H_
 
 #define SHOWKBCODES	0
 #define KBCODES 	0x100
@@ -15,4 +13,4 @@ int initinput(void);
 void uninitinput(void);
 void clearkb(void);
 
-#endif
+#endif /* _KEYBOARD_H_ */

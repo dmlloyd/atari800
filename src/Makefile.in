@@ -1,4 +1,4 @@
-# $Id: Makefile.in,v 1.13 2001/12/02 23:10:49 joy Exp $
+# $Id: Makefile.in,v 1.14 2001/12/03 23:24:14 joy Exp $
 
 CC = @CC@
 RC = windres
@@ -61,8 +61,8 @@ all: $(TARGET)
 	$(CC) -c -o $@ $(DEFS) $(INCLUDE) $(CFLAGS) $<
 
 %.o: %.s
-	cd falcon; xgen -L1 $@ $<
-	cd falcon; gst2gcc gcc $@
+	cd $(<D); xgen -L1 $(@F) $(<F)
+	cd $(<D); gst2gcc gcc $(@F)
 
 $(TARGET): $(OBJ)
 	$(CC) -o $@ $(LDFLAGS) $(OBJ) $(LIBS)

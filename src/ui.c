@@ -1,4 +1,4 @@
-/* $Id: ui.c,v 1.22 2001/10/10 21:35:00 fox Exp $ */
+/* $Id: ui.c,v 1.23 2001/10/11 08:40:29 fox Exp $ */
 #include <stdio.h>
 #include <fcntl.h>
 #include <string.h>
@@ -609,12 +609,6 @@ void ui(UBYTE* screen)
 	int option = 0;
 	int done = FALSE;
 
-#ifdef CURSES
-	char *screenbackup = malloc(40 * 24);
-	if (screenbackup)
-		dCopyFromMem(dGetWordAligned(88), screenbackup, 40 * 24);	/* backup of textmode screen */
-#endif
-
 	ui_is_active = TRUE;
 
 	/* Sound_Active(FALSE); */
@@ -708,12 +702,6 @@ void ui(UBYTE* screen)
 			exit(0);
 		}
 	}
-#ifdef CURSES
-	if (screenbackup) {
-		dCopyToMem(screenbackup, dGetWordAligned(88), 40 * 24);	/* restore textmode screen */
-		free(screenbackup);
-	}
-#endif
 	/* Sound_Active(TRUE); */
 	ui_is_active = FALSE;
 	while (Atari_Keyboard() != AKEY_NONE);	/* flush keypresses */
@@ -771,6 +759,9 @@ int CrashMenu()
 
 /*
 $Log: ui.c,v $
+Revision 1.23  2001/10/11 08:40:29  fox
+removed CURSES-specific code
+
 Revision 1.22  2001/10/10 21:35:00  fox
 corrected a typo
 

@@ -1,6 +1,8 @@
-/* $Id: sio.h,v 1.3 2001/03/18 07:56:48 knik Exp $ */
+/* $Id: sio.h,v 1.4 2001/04/15 09:11:53 knik Exp $ */
 #ifndef __SIO__
 #define __SIO__
+
+#include "config.h"
 
 #define MAX_DRIVES 8
 

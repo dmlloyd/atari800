@@ -1,4 +1,4 @@
-# $Id: Makefile.in,v 1.9 2001/10/03 16:54:53 fox Exp $
+# $Id: Makefile.in,v 1.10 2001/10/10 06:58:48 joy Exp $
 
 CC = @CC@
 RC = windres
@@ -32,6 +32,7 @@ OBJ = \
 	prompts.o \
 	rt-config.o \
 	ui.o \
+	ui_basic.o \
 	binload.o \
 	list.o \
 	ataripcx.o \

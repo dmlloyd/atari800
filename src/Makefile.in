@@ -1,4 +1,4 @@
-# $Id: Makefile.in,v 1.22 2003/01/27 14:13:01 joy Exp $
+# $Id: Makefile.in,v 1.23 2003/02/19 14:07:44 joy Exp $
 
 CC = @CC@
 RC = windres
@@ -76,7 +76,7 @@ dep:
 	then echo warning: makedepend failed; fi
 
 clean:
-	rm -f $(OBJ) $(TARGET)
+	rm -f *.o $(TARGET)
 
 distclean: clean
 	-rm -f Makefile configure config.log config.status config.h

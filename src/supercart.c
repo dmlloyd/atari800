@@ -1,3 +1,5 @@
+/* $Id: supercart.c,v 1.2 2001/03/18 07:56:48 knik Exp $ */
+#include <stdlib.h>
 #include <time.h>
 
 #include "atari.h"

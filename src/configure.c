@@ -1,3 +1,4 @@
+/* $Id: configure.c,v 1.2 2001/03/18 07:56:48 knik Exp $ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -20,7 +21,7 @@ void bus_err()
 
 int unaligned_long_ok()
 {
-#ifdef DJGPP
+#ifndef SIGBUS
 	return 1;
 #else
 	long l[2];
@@ -308,3 +309,10 @@ int main(void)
 
 	return 0;
 }
+
+/*
+$Log: configure.c,v $
+Revision 1.2  2001/03/18 07:56:48  knik
+win32 port
+
+*/

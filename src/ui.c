@@ -1,4 +1,4 @@
-/* $Id: ui.c,v 1.14 2001/09/17 18:17:53 fox Exp $ */
+/* $Id: ui.c,v 1.15 2001/09/21 16:58:03 fox Exp $ */
 #include <stdio.h>
 #include <fcntl.h>
 #include <string.h>
@@ -25,6 +25,7 @@
 #include "sndsave.h"
 #include "cartridge.h"
 #include "rtime.h"
+#include "input.h"
 
 extern int refresh_rate;
 
@@ -1494,6 +1495,9 @@ void ReadCharacterSet( void )
 
 /*
 $Log: ui.c,v $
+Revision 1.15  2001/09/21 16:58:03  fox
+included input.h
+
 Revision 1.14  2001/09/17 18:17:53  fox
 enable_c000_ram -> ram_size = 52
 

@@ -1,4 +1,4 @@
-/* $Id: atari_vga.c,v 1.4 2001/09/17 18:11:04 fox Exp $ */
+/* $Id: atari_vga.c,v 1.5 2001/09/21 16:57:37 fox Exp $ */
 /* -------------------------------------------------------------------------- */
 
 /*
@@ -22,6 +22,7 @@
 #include "config.h"
 #include "cpu.h"
 #include "colours.h"
+#include "input.h"
 #include "ui.h"         /* for ui_is_active */
 #include "log.h"
 #include "dos/sound_dos.h"

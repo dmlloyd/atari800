@@ -1,4 +1,4 @@
-/* $Id: ui.c,v 1.24 2001/10/12 07:56:15 fox Exp $ */
+/* $Id: ui.c,v 1.25 2001/10/26 05:43:17 fox Exp $ */
 #include <stdio.h>
 #include <fcntl.h>
 #include <string.h>
@@ -100,6 +100,13 @@ void SelectSystem()
 
 	int system = 0;
 	int nsystems = sizeof(machine)/sizeof(machine[0]);
+
+	int i;
+	for (i = 0; i < nsystems; i++)
+		if (machine_type == machine[i].type && ram_size == machine[i].ram) {
+			system = i;
+			break;
+		}
 
 	system = ui_driver->fSelect("Select System", FALSE, system, menu_array, NULL);
 
@@ -761,6 +768,9 @@ int CrashMenu()
 
 /*
 $Log: ui.c,v $
+Revision 1.25  2001/10/26 05:43:17  fox
+current system is selected by default in SelectSystem()
+
 Revision 1.24  2001/10/12 07:56:15  fox
 added 8 KB and 4 KB cartridges for 5200
 

@@ -23,7 +23,7 @@
 **
 ** Note: the information in this file has been gathered from many
 **  Internet documents, and from source code written by Ethan Brodsky.
-** $Id: dos_sb.c,v 1.1 2000/10/10 13:27:18 joy Exp $
+** $Id: dos_sb.c,v 1.1.1.1 2000/10/10 13:27:18 joy Exp $
 */
 
 #include <stdlib.h>
@@ -1120,8 +1120,8 @@ int sb_startoutput(sbmix_t fillbuf)
 
 /*
 ** $Log: dos_sb.c,v $
-** Revision 1.1  2000/10/10 13:27:18  joy
-** Initial revision
+** Revision 1.1.1.1  2000/10/10 13:27:18  joy
+** Imported using TkCVS
 **
 ** Revision 1.6  2000/08/11 01:40:33  matt
 ** major rewrite - far cleaner, and fixed an SB detection reboot bug =(

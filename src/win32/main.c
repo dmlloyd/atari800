@@ -1,5 +1,5 @@
 /* (C) 2000  Krzysztof Nikiel */
-/* $Id: main.c,v 1.2 2001/04/08 05:51:44 knik Exp $ */
+/* $Id: main.c,v 1.3 2001/05/19 06:12:05 knik Exp $ */
 #include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -105,6 +105,9 @@ static BOOL initwin(HINSTANCE hInstance, int nCmdShow)
       return 1;
     }
 
+  ShowWindow(hWndMain, nCmdShow);
+  UpdateWindow(hWndMain);
+
   return 0;
 }
 
@@ -164,6 +167,9 @@ int PASCAL WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR
 
 /*
 $Log: main.c,v $
+Revision 1.3  2001/05/19 06:12:05  knik
+show window before display change
+
 Revision 1.2  2001/04/08 05:51:44  knik
 sound calls update
 

@@ -1,4 +1,4 @@
-/* $Id: compfile.c,v 1.6 2001/07/25 13:03:35 fox Exp $ */
+/* $Id: compfile.c,v 1.7 2001/09/08 07:49:33 knik Exp $ */
 /* dcmtoatr based on code written by Chad Wagner (cmwagner@gate.net),
    version 1.4 (also by Preston Crow) */
 
@@ -13,18 +13,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#ifdef __MSDOS__
-#include <io.h>
-#endif
 #include "atari.h"
 #include "config.h"
 #include "log.h"
 #ifdef HAVE_LIBZ
 #include "zlib.h"
-#endif
-
-#ifndef MAX_PATH
-#define MAX_PATH 128
 #endif
 
 /* Size of memory buffer ZLIB should use when decompressing files */
@@ -650,6 +643,9 @@ static long soffset()
 
 /*
 $Log: compfile.c,v $
+Revision 1.7  2001/09/08 07:49:33  knik
+unused definitions and inclusions removed
+
 Revision 1.6  2001/07/25 13:03:35  fox
 removed unused declarations
 

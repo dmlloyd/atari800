@@ -1,4 +1,4 @@
-# $Id: common.mak,v 1.2 2001/04/04 05:35:36 knik Exp $
+# $Id: common.mak,v 1.3 2001/04/15 09:14:33 knik Exp $
 
 TARGET = atari800$(EXE)
 
@@ -8,7 +8,7 @@ ifeq (.atari800,$(wildcard .atari800))
 include .atari800
 endif
 
-ifdef ZLIB_CAPABLE
+ifdef HAVE_LIBZ
 LIBS += -lz
 endif
 

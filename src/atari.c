@@ -1,4 +1,4 @@
-/* $Id: atari.c,v 1.7 2001/04/08 05:57:12 knik Exp $ */
+/* $Id: atari.c,v 1.8 2001/04/15 09:14:33 knik Exp $ */
 
 #include "config.h"
 #include <stdio.h>
@@ -830,7 +830,7 @@ void Atari800_Hardware(void)
 
 int zlib_capable(void)
 {
-#ifdef ZLIB_CAPABLE
+#ifdef HAVE_LIBZ
 	return TRUE;
 #else
 	return FALSE;
@@ -930,6 +930,9 @@ void MainStateRead( void )
 
 /*
 $Log: atari.c,v $
+Revision 1.8  2001/04/15 09:14:33  knik
+zlib_capable -> have_libz (autoconf compatibility)
+
 Revision 1.7  2001/04/08 05:57:12  knik
 sound calls update
 

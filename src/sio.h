@@ -1,4 +1,4 @@
-/* $Id: sio.h,v 1.8 2003/09/23 15:39:07 pfusik Exp $ */
+/* $Id: sio.h,v 1.9 2003/10/24 14:13:58 pfusik Exp $ */
 #ifndef __SIO__
 #define __SIO__
 
@@ -47,8 +47,5 @@ void SIO_Exit(void);
 #define SERIN_INTERVAL 8
 #define SEROUT_INTERVAL 8
 #define ACK_INTERVAL 36
-#ifndef NO_SECTOR_DELAY
-#define SECTOR_DELAY 3200
-#endif	/* NO_SECTOR_DELAY */
 
 #endif	/* __SIO__ */

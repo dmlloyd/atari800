@@ -1,4 +1,4 @@
-# $Id: Makefile.in,v 1.21 2003/01/27 13:14:53 joy Exp $
+# $Id: Makefile.in,v 1.22 2003/01/27 14:13:01 joy Exp $
 
 CC = @CC@
 RC = windres
@@ -48,7 +48,8 @@ OBJ = \
 	remez.o \
 	sndsave.o \
 	cassette.o \
-	input.o
+	input.o\
+	cycle_map.o
 
 OBJ += @OBJ@
 

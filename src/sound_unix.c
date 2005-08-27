@@ -1,5 +1,5 @@
 /*
- * sound.c - high-level sound routines
+ * sound.c - Unix (and Linux) specific code
  *
  * Copyright (C) 1995-1998 David Firth
  * Copyright (C) 1998-2005 Atari800 development team (see DOC/CREDITS)
@@ -190,7 +190,10 @@ void Sound_Update(void)
 #endif	/* SOUND */
 
 /*
- $Log: sound.c,v $
+ $Log: sound_unix.c,v $
+ Revision 1.1  2005/08/27 10:34:25  pfusik
+ renamed sound.c to sound_unix.c
+
  Revision 1.15  2005/08/16 23:07:28  pfusik
  #include "config.h" before system headers
 

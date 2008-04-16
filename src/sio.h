@@ -1,4 +1,4 @@
-/* $Id: sio.h,v 1.12 2005/08/17 22:45:54 pfusik Exp $ */
+/* $Id: sio.h,v 1.13 2008/04/16 09:38:32 pfusik Exp $ */
 #ifndef _SIO_H_
 #define _SIO_H_
 
@@ -42,6 +42,7 @@ void SIO(void);
 #define SIO_FinalStatus     (0x05)
 #define SIO_FormatFrame     (0x06)
 #define SIO_CasRead         (0x60)
+#define SIO_CasWrite        (0x61)
 
 UBYTE SIO_ChkSum(const UBYTE *buffer, int length);
 void SIO_TapeMotor(int onoff);

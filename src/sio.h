@@ -1,4 +1,4 @@
-/* $Id: sio.h,v 1.13 2008/04/16 09:38:32 pfusik Exp $ */
+/* $Id: sio.h,v 1.14 2008/05/25 09:23:29 perrym Exp $ */
 #ifndef _SIO_H_
 #define _SIO_H_
 
@@ -57,5 +57,16 @@ void SIO_Exit(void);
 #define SERIN_INTERVAL     8
 #define SEROUT_INTERVAL    8
 #define ACK_INTERVAL      36
+
+/* These functions are also used by the 1450XLD Parallel disk device */
+extern int SIO_format_sectorcount[MAX_DRIVES];
+extern int SIO_format_sectorsize[MAX_DRIVES];
+int SIO_ReadStatusBlock(int unit, UBYTE *buffer);
+int SIO_FormatDisk(int unit, UBYTE *buffer, int sectsize, int sectcount);
+void SIO_SizeOfSector(UBYTE unit, int sector, int *sz, ULONG *ofs);
+int SIO_ReadSector(int unit, int sector, UBYTE *buffer);
+int SIO_DriveStatus(int unit, UBYTE *buffer);
+int SIO_WriteStatusBlock(int unit, const UBYTE *buffer);
+int SIO_WriteSector(int unit, int sector, const UBYTE *buffer);
 
 #endif	/* _SIO_H_ */

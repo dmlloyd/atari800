@@ -1,4 +1,4 @@
-/* $Id: sio.h,v 1.14 2008/05/25 09:23:29 perrym Exp $ */
+/* $Id: sio.h,v 1.15 2008/05/26 11:26:48 perrym Exp $ */
 #ifndef _SIO_H_
 #define _SIO_H_
 
@@ -68,5 +68,7 @@ int SIO_ReadSector(int unit, int sector, UBYTE *buffer);
 int SIO_DriveStatus(int unit, UBYTE *buffer);
 int SIO_WriteStatusBlock(int unit, const UBYTE *buffer);
 int SIO_WriteSector(int unit, int sector, const UBYTE *buffer);
+void SIOStateSave(void);
+void SIOStateRead(void);
 
 #endif	/* _SIO_H_ */

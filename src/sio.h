@@ -1,4 +1,3 @@
-/* $Id: sio.h,v 1.17 2008/07/12 05:15:10 perrym Exp $ */
 #ifndef SIO_H_
 #define SIO_H_
 
